@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: itecs
+#配置jpa
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+         format_sql: true
+         show_sql: true
+#配置数据库数据源
+  datasource:
+    username: root
+    password: lhq032613
+    type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ecs?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    hikari:
+      maximum-pool-size: 3
+
+#配置fastJson
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    property-naming-strategy: SNAKE_CASE               #转换成蛇形
+
+jwt:
+  header: Authorization
+  prefix: "Bearer "
+  secret: M@*tr0Pv
+  token:
+    expire: 3600
+
+server:
+  port: 8888
+
+
